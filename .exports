@@ -1,17 +1,16 @@
-# Make vim the default editor
+# vim as default
 export EDITOR="vim"
+
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
-# Larger bash history (allow 32³ entries; default is 500)
-export HISTSIZE=32768
-export HISTFILESIZE=$HISTSIZE
-export HISTCONTROL=ignoredups
+# Prefer US English and use UTF-8
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US"
 
-# timestamps for bash history. www.debian-administration.org/users/rossen/weblog/1
-# saved for later analysis
-HISTTIMEFORMAT='%F %T '
-export HISTTIMEFORMAT
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# Make some commands not show up in history
-export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
+# here's LS_COLORS
+# github.com/trapd00r/LS_COLORS
+command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
+eval "$(gdircolors -b ~/.dircolors)"
