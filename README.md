@@ -2,7 +2,7 @@
 
 * I maintain this repo as *my* dotfiles, but I'm keenly aware people are using it for theirs.
 * You're quite welcome to make suggestions, however I may decline if it's not of personal value to me.
-* If you're starting off consider forking [mathias](https://github.com/mathiasbynens/dotfiles/) or [alrra](https://github.com/alrra/dotfiles/). paulmillr and gf3 also have great setups
+* If you're starting off consider forking [mathias](https://github.com/mathiasbynens/dotfiles/) or [alrra](https://github.com/alrra/dotfiles/). [paulmillr](https://github.com/paulmillr/dotfiles) and [gf3](https://github.com/gf3/dotfiles) also have great setups
 
 ## Setup
 #### installing & using
@@ -10,7 +10,7 @@
 * fork this to your own acct
 * clone that repo
 * read and run parts of `setup-a-new-machine.sh`
-* read and run `symlink-setup.sh` 
+* read and run `symlink-setup.sh`
   * git config needs attention, read the notes.
 * use it. yay!
 
@@ -20,7 +20,6 @@
 * you can also hypothetically cherry-pick commits from me and mathias and our fork ecosystem.
 
 
-
 ## my favorite parts.
 
 ### [`.aliases`](https://github.com/paulirish/dotfiles/blob/master/.aliases) and [`.functions`](https://github.com/paulirish/dotfiles/blob/master/.functions)
@@ -28,11 +27,11 @@
 So many goodies.
 
 ### The "readline config" (`.inputrc`)
-Basically it makes typing into the prompt amazing.  
+Basically it makes typing into the prompt amazing.
 
 * tab like crazy for autocompletion that doesnt suck. tab all the things. srsly.
 * no more <tab><tab> that says "Display all 1745 possibilities? (y or n)" YAY
-* type `cat <uparrow>` to see your previous `cat`s and use them.  
+* type `cat <uparrow>` to see your previous `cat`s and use them.
 * case insensitivity.
 * tab all the livelong day.
 
@@ -55,12 +54,8 @@ Lastly, I use `open .` to open Finder from this path. (That's just available nor
 ## overview of files
 
 ####  Automatic config
-* `.ackrc` - for ack (better than grep)
-<<<<<<< HEAD
-=======
 * `.vimrc`, `.vim` - vim config, obv.
 * `.inputrc` - behavior of the actual prompt line
->>>>>>> paul
 
 #### shell environment
 * `.aliases`
@@ -69,7 +64,7 @@ Lastly, I use `open .` to open Finder from this path. (That's just available nor
 * `.bashrc`
 * `.exports`
 * `.functions`
-* `.extra` - not included, explained above
+* `.extra` - not included, explained below
 
 #### manual run
 * `setup-a-new-machine.sh` - random apps i need installed
@@ -88,7 +83,7 @@ Lastly, I use `open .` to open Finder from this path. (That's just available nor
 
 There will be items that don't belong to be committed to a git repo, because either 1) it shoudn't be the same across your machines or 2) it shouldn't be in a git repo. Kick it off like this:
 
-`touch ~/.extra && $EDITOR $_` 
+`touch ~/.extra && $EDITOR $_`
 
 I have some EXPORTS, my PATH construction, and a few aliases for ssh'ing into my servers in there.
 
@@ -112,11 +107,7 @@ export PATH
 Mathias's repo is the canonical for this, but you should probably run his or mine after reviewing it.
 
 ```bash
-<<<<<<< HEAD
-git clone https://github.com/maxhakansson/dotfiles.git && cd dotfiles && ./sync.sh
-=======
 ./.osx
->>>>>>> paul
 ```
 
 ### `~/bin`
