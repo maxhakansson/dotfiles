@@ -11,12 +11,13 @@ brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
 # daily
-brew cask install spectacle
+# brew cask install spectacle
+brew cask install slate
 brew cask install dropbox
-brew cask install gyazo
 brew cask install 1password
-brew cask install rescuetime
+brew cask install alfred
 brew cask install flux
+brew cask install sourcetree
 
 # dev
 brew cask install iterm2
@@ -25,9 +26,9 @@ brew cask install imagealpha
 brew cask install imageoptim
 
 # fun
-brew cask install limechat
+# brew cask install limechat
 brew cask install miro-video-converter
-brew cask install horndis               # usb tethering
+# brew cask install horndis               # usb tethering
 
 # browsers
 brew cask install google-chrome-canary
@@ -40,8 +41,6 @@ brew cask install google-chrome-canary
 brew cask install disk-inventory-x
 brew cask install screenflow
 brew cask install vlc
-brew cask install gpgtools
-brew cask install licecap
 brew cask install utorrent
 
 
