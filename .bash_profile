@@ -2,7 +2,7 @@
 # Load our dotfiles like ~/.bash_prompt, etc…
 #   ~/.extra can be used for settings you don’t want to commit,
 #   Use it to configure your PATH, thus it being first in line.
-for file in ~/.{bash_prompt,exports,aliases,functions}; do
+for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
@@ -63,6 +63,8 @@ export NVM_DIR="$HOME/.nvm"
 # z beats cd most of the time.
 #   github.com/rupa/z
 source ~/code/z/z.sh
+ANDROID_HOME=/usr/local/opt/android-sdk
+ANDROID_SDK=/usr/local/opt/android-sdk
 
 
 

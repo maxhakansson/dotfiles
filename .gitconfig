@@ -51,9 +51,8 @@
 
 # git mergetool
 [merge]
-	tool = opendiff
-
-# rewrites of repo paths
+	log = true
+	tool = diffmerge
 [url "git@github.com:"]
 	insteadOf = "gh:"
 	insteadOf = "git://github.com"
@@ -97,5 +96,15 @@
 
 [fetch]
 	prune = true
+[difftool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustExitCode = true
+[push]
+	default = simple
 [diff]
-	compactionHeuristic = true
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
