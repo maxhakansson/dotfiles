@@ -1,0 +1,18 @@
+if [[ $1 == "-r" ]]
+then
+    cat manifest | while read line; do
+        if [[ "$line" == build_version=* ]]
+        then
+        	number=`echo $line | cut -c 15-18`
+            let number++
+        	sed -i "" "s/build_version\=[0-9]*/build_version\=$number/" manifest
+        fi
+	done
+
+    zip -q -9 -r --exclude=*.svn* --exclude=*.DS_Store* --exclude=*.zip* --exclude=*.git* --exclude=*.project* --exclude=*.sh* deploy.zip .
+
+    curl --progress-bar --user rokudev:developer --anyauth -F "mysubmit=Install" -F "archive=@deploy.zip" -F "passwd=" http://$2/plugin_install |  grep '(?<=<font color="red">).*' | sed 's/<\/font>//'
+
+else
+    telnet "$1" 8085
+fi
