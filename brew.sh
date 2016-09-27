@@ -41,10 +41,6 @@ brew install homebrew/dupes/screen
 # run this script when this file changes guy.
 brew install entr
 
-# github util. imho better than hub
-brew install gh
-
-
 # mtr - ping & traceroute. best.
 brew install mtr
 
