@@ -47,9 +47,7 @@ log() {
 function server() {
 	local port="${1:-8000}"
 	open "http://localhost:${port}/" &
-	# statik is good because it won't expose hidden folders/files by default.
-	# npm install -g statik
-	statik --port "$port" .
+	python -m SimpleHTTPServer "$port"
 }
 
 
