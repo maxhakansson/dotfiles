@@ -92,7 +92,7 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
 done
 # Open chrome with web security disabled
-alias chrome="open /Applications/Google\ Chrome.app/ --args --disable-web-security"
+alias chrome="open /Applications/Google\ Chrome.app/ --args --disable-web-security --user-data-dir"
 
 alias emptytrash=" \
     sudo rm -rfv /Volumes/*/.Trashes; \
