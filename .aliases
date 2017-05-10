@@ -85,15 +85,16 @@ alias ungz="gunzip -k"
 # File size
 alias fs="stat -f \"%z bytes\""
 
-# Empty the Trash on all mounted volumes and the main HDD. then clear the useless sleepimage
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "$method"="lwp-request -m '$method'"
+    alias "$method"="lwp-request -m '$method'"
 done
-# Open chrome with web security disabled
-alias chrome="open /Applications/Google\ Chrome.app/ --args --disable-web-security"
 
+# Open chrome with web security disabled
+alias chrome="open /Applications/Google\ Chrome.app/ --args --disable-web-security --user-data-dir"
+
+# Empty the Trash on all mounted volumes and the main HDD. then clear the useless sleepimage
 alias emptytrash=" \
     sudo rm -rfv /Volumes/*/.Trashes; \
     rm -rfv ~/.Trash/*; \

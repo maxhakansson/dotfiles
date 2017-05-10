@@ -108,5 +108,5 @@ shopt -s nocaseglob;
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
-
-
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
