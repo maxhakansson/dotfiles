@@ -93,6 +93,7 @@ done
 
 # Open chrome with web security disabled
 alias chrome="open /Applications/Google\ Chrome.app/ --args --disable-web-security --user-data-dir"
+alias chromecanary="open /Applications/Google\ Chrome\ Canary.app/ --args --disable-web-security --user-data-dir --allow-running-insecure-content"
 
 # Empty the Trash on all mounted volumes and the main HDD. then clear the useless sleepimage
 alias emptytrash=" \
