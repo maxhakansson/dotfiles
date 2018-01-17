@@ -110,3 +110,6 @@ shopt -s nocaseglob;
 shopt -s cdspell;
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+
+# Tizen
+export PATH="~/tizen-studio/tools:$PATH"
