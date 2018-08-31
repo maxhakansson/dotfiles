@@ -17,7 +17,7 @@
 
 
 [core]
-    excludesfile = /Users/max/.gitignore_global
+	excludesfile = /Users/max/.gitignore_global
     attributesfile = ~/.gitattributes
 
 [pager]
@@ -77,8 +77,8 @@
     default = current
 
 [user]
-    name = Max Håkansson
-    email = max.hakansson@gmail.com
+	name = Max Håkansson
+	email = max.hakansson@accedo.tv
 [mergetool "diffmerge"]
     cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
     trustExitCode = true
@@ -97,14 +97,14 @@
 [fetch]
     prune = true
 [difftool "sourcetree"]
-    cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
-    path =
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	path = 
 [mergetool "sourcetree"]
-    cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-    trustExitCode = true
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustExitCode = true
 [diff]
     tool = diffmerge
 [difftool "diffmerge"]
     cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [commit]
-    template = /Users/max/.stCommitMsg
+	template = /Users/max/.stCommitMsg
