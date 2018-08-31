@@ -17,8 +17,8 @@
 
 
 [core]
-    excludesfile = /Users/max/.gitignore_global
-    attributesfile = ~/.gitattributes
+	excludesfile = /Users/max/.gitignore_global
+	attributesfile = ~/.gitattributes
 
 [pager]
     # insanely beautiful diffs ==> npm install -g diff-so-fancy
