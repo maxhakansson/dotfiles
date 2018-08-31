@@ -118,3 +118,6 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+
+# Tizen
+export PATH="~/tizen-studio/tools:$PATH"
