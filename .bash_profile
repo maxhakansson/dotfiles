@@ -112,4 +112,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
 # Tizen
-export PATH="~/tizen-studio/tools:$PATH"
+export PATH="/Users/max/tizen-studio/tools/ide/bin:/Users/max/tizen-studio/tools:$PATH"
+
+# VS Code
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
