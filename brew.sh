@@ -61,9 +61,10 @@ brew install node # This installs `npm` too using the recommended installation m
 brew install pv
 brew install rename
 brew install tree
-brew install zopfli
+#brew install zopfli
 brew install ffmpeg --with-libvpx
 brew install ngrok
+brew install eslint
 
 brew install terminal-notifier
 
