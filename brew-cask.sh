@@ -6,15 +6,12 @@
 
 
 # Install native apps
-
-brew install caskroom/cask/brew-cask
-brew tap caskroom/versions
+brew tap caskroom/cask
 
 # daily
 # brew cask install spectacle
 brew cask install slate
 brew cask install dropbox
-brew cask install lastpass
 brew cask install alfred
 brew cask install slack
 brew cask install spotify
