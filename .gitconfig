@@ -78,7 +78,7 @@
 
 [user]
     name = Max Håkansson
-    email = max.hakansson@accedo.tv
+    email = max.hakansson@gmail.com
 [mergetool "diffmerge"]
     cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
     trustExitCode = true

@@ -11,7 +11,7 @@ brew upgrade
 
 # GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
-brew install moreutils
+#brew install moreutils
 # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
 brew install findutils
 # GNU `sed`, overwriting the built-in `sed`
@@ -24,8 +24,6 @@ brew install bash
 brew tap homebrew/versions
 brew install bash-completion2
 
-brew install homebrew/completions/brew-cask-completion
-
 # generic colouriser  http://kassiopeia.juls.savba.sk/~garabik/software/grc/
 brew install grc
 
@@ -37,15 +35,11 @@ brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 
-
-# run this script when this file changes guy.
-brew install entr
-
 # mtr - ping & traceroute. best.
 brew install mtr
 
     # allow mtr to run without sudo
-    mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/paulirish/.homebrew/Cellar/mtr/0.86`
+    mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/max/.homebrew/Cellar/mtr/0.86`
     sudo chmod 4755 $mtrlocation/sbin/mtr
     sudo chown root $mtrlocation/sbin/mtr
 
@@ -65,11 +59,15 @@ brew install tree
 brew install ffmpeg --with-libvpx
 brew install ngrok
 brew install eslint
-
+brew install gradle
+brew install android-sdk
 brew install terminal-notifier
-
 brew install android-platform-tools
 brew install pidcat   # colored logcat guy
+
+brew install redis
+brew install php
+brew install awscli
 
 # Remove outdated versions from the cellar
 brew cleanup
