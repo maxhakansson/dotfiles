@@ -27,6 +27,7 @@ brew cask install docker
 brew cask install java
 brew cask install virtualbox
 brew cask install sourcetree
+brew cask install postman
 
 # fun
 # brew cask install limechat
