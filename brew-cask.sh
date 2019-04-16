@@ -28,6 +28,8 @@ brew cask install java
 brew cask install virtualbox
 brew cask install sourcetree
 brew cask install postman
+brew cask install charles
+brew cask install android-studio
 
 # fun
 # brew cask install limechat

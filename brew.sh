@@ -45,11 +45,11 @@ brew install mtr
 
 
 # Install other useful binaries
-brew install the_silver_searcher
+#brew install the_silver_searcher
 brew install fzf
 
 brew install git
-brew install git-flow
+#brew install git-flow
 brew install imagemagick --with-webp
 brew install node # This installs `npm` too using the recommended installation method
 brew install pv

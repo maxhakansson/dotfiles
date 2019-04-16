@@ -63,10 +63,6 @@ export NVM_DIR="$HOME/.nvm"
 # z beats cd most of the time.
 #   github.com/rupa/z
 source ~/code/z/z.sh
-ANDROID_HOME=/usr/local/opt/android-sdk
-ANDROID_SDK=/usr/local/opt/android-sdk
-
-
 
 ##
 ## Completion…
@@ -120,7 +116,12 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
 # Tizen
-export PATH="/Users/max/tizen-studio/tools/ide/bin:/Users/max/tizen-studio/tools:$PATH"
+#export PATH="~/tizen-studio/tools/ide/bin:~/tizen-studio/tools:$PATH"
 
 # Dotfiles
 export PATH="~/dotfiles/bin:$PATH"
+
+# Android
+export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+export ANDROID_SDK=/Users/$USER/Library/Android/sdk
+export PATH="$ANDROID_SDK/platform-tools:$PATH"
