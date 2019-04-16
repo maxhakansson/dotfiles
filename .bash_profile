@@ -124,3 +124,6 @@ export PATH="/Users/max/tizen-studio/tools/ide/bin:/Users/max/tizen-studio/tools
 
 # Dotfiles
 export PATH="~/dotfiles/bin:$PATH"
+
+# Homebrew
+export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH

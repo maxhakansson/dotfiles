@@ -129,6 +129,7 @@ export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 ##############################################################################################################
 ### install of common things
 ###
+mkdir "${HOME}/.npm-packages"
 
 # fancy listing of recent branches
 npm install -g git-recent
