@@ -124,7 +124,7 @@ export PATH="~/dotfiles/bin:$PATH"
 # Android
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export ANDROID_SDK=/Users/$USER/Library/Android/sdk
-export PATH="$ANDROID_SDK/platform-tools:$PATH"
+export PATH="$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$ANDROID_SDK/tools/bin:$PATH"
 
 # Homebrew
 export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
