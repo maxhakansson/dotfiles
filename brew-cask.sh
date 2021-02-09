@@ -6,47 +6,46 @@
 
 
 # Install native apps
-brew tap caskroom/cask
+brew tap homebrew/cask
 
 # daily
-# brew cask install spectacle
-brew cask install slate
-brew cask install dropbox
-brew cask install alfred
-brew cask install slack
-brew cask install spotify
-brew cask install copyq
-#brew cask install flux
+brew install --cask slate
+brew install --cask dropbox
+brew install --cask alfred
+brew install --cask slack
+brew install --cask spotify
+brew install --cask copyq
+brew install --cask flux
+# brew install --cask spectacle
 
 # dev
-brew cask install iterm2
-brew cask install sublime-text
-brew cask install imageoptim
-brew cask install diffmerge
-brew cask install docker
-brew cask install java
-brew cask install virtualbox
-brew cask install sourcetree
-brew cask install postman
-brew cask install charles
-brew cask install android-studio
+brew install --cask iterm2
+brew install --cask visual-studio-code
+# brew install --cask sublime-text
+# brew install --cask imageoptim
+# brew install --cask diffmerge
+brew install --cask docker
+# brew install --cask java
+brew install --cask virtualbox
+brew install --cask sourcetree
+brew install --cask postman
+brew install --cask charles
+brew install --cask android-studio
 
 # fun
-# brew cask install limechat
-#brew cask install miro-video-converter
-# brew cask install horndis               # usb tethering
+# brew install --cask limechat
+# brew install --cask miro-video-converter
+# brew install --cask horndis               # usb tethering
 
 # browsers
-brew cask install google-chrome-canary
-# brew cask install firefoxnightly
-# brew cask install webkit-nightly
-# brew cask install chromium
-# brew cask install torbrowser
+# brew install --cask google-chrome-canary
+# brew install --cask firefoxnightly
+# brew install --cask webkit-nightly
+# brew install --cask chromium
+# brew install --cask torbrowser
 
 # less often
-brew cask install disk-inventory-x
-#brew cask install screenflow
-brew cask install vlc
+# brew install --cask disk-inventory-x
+# brew install --cask screenflow
+# brew install --cask vlc
 
-
-# Not on cask but I want regardless.

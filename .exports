@@ -25,5 +25,5 @@ export HISTTIMEFORMAT
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
-export ROKU_IP=192.168.150.4
+export ROKU_IP=192.168.0.50
 export ROKU_PASSWORD=developer

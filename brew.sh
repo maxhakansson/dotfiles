@@ -10,12 +10,12 @@ brew upgrade
 
 
 # GNU core utilities (those that come with OS X are outdated)
-brew install coreutils
+#brew install coreutils
 #brew install moreutils
 # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
-brew install findutils
+#brew install findutils
 # GNU `sed`, overwriting the built-in `sed`
-brew install gnu-sed --with-default-names
+#brew install gnu-sed --with-default-names
 
 
 # Bash 4
@@ -46,28 +46,29 @@ brew install mtr
 
 # Install other useful binaries
 #brew install the_silver_searcher
-brew install fzf
+#brew install fzf
 
 brew install git
 #brew install git-flow
-brew install imagemagick --with-webp
+#brew install imagemagick --with-webp
 brew install node # This installs `npm` too using the recommended installation method
-brew install pv
-brew install rename
-brew install tree
+#brew install pv
+#brew install rename
+#brew install tree
 #brew install zopfli
-brew install ffmpeg --with-libvpx
+#brew install ffmpeg --with-libvpx
 brew install ngrok
-brew install eslint
-brew install gradle
+#brew install eslint
+#brew install gradle
 brew install android-sdk
 brew install terminal-notifier
-brew install android-platform-tools
+#brew install android-platform-tools
 brew install pidcat   # colored logcat guy
+brew install telnet
 
-brew install redis
-brew install php
-brew install awscli
+#brew install redis
+#brew install php
+#brew install awscli
 
 # Remove outdated versions from the cellar
 brew cleanup
