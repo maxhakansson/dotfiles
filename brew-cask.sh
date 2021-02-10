@@ -38,6 +38,7 @@ brew install --cask android-studio
 # brew install --cask horndis               # usb tethering
 
 # browsers
+brew install --cask google-chrome
 # brew install --cask google-chrome-canary
 # brew install --cask firefoxnightly
 # brew install --cask webkit-nightly

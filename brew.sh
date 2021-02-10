@@ -20,9 +20,10 @@ brew upgrade
 
 # Bash 4
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
-brew install bash
+# brew install bash
+brew install zsh
 brew tap homebrew/versions
-brew install bash-completion2
+# brew install bash-completion2
 
 # generic colouriser  http://kassiopeia.juls.savba.sk/~garabik/software/grc/
 brew install grc
@@ -48,6 +49,7 @@ brew install mtr
 #brew install the_silver_searcher
 #brew install fzf
 
+brew install z
 brew install git
 #brew install git-flow
 #brew install imagemagick --with-webp
@@ -59,9 +61,9 @@ brew install node # This installs `npm` too using the recommended installation m
 #brew install ffmpeg --with-libvpx
 brew install ngrok
 #brew install eslint
+#brew install terminal-notifier
 #brew install gradle
-brew install android-sdk
-brew install terminal-notifier
+#brew install android-sdk
 #brew install android-platform-tools
 brew install pidcat   # colored logcat guy
 brew install telnet

@@ -57,6 +57,36 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # ^ the only downside with this is [up] on the readline will go over all history not just this bash session.
 
 
+##
+## PATH
+##
+
+# NPM (Use .npmrc instead)
+export NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+# # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+# unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+# export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+# Is this needed?
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
+# Tizen
+#export PATH="~/tizen-studio/tools/ide/bin:~/tizen-studio/tools:$PATH"
+
+# Dotfiles
+export PATH="~/dotfiles/bin:$PATH"
+
+# Android
+export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+export ANDROID_SDK=/Users/$USER/Library/Android/sdk
+export PATH="$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$ANDROID_SDK/tools/bin:$PATH"
+
+# Homebrew
+export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
+
+
 
 # z beats cd most of the time. `brew install z`
 if which brew > /dev/null; then

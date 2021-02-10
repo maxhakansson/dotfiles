@@ -108,3 +108,5 @@
     cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [commit]
     template = /Users/max/.stCommitMsg
+[pull]
+	rebase = false
