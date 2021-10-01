@@ -7,6 +7,7 @@
 
 # Install native apps
 brew tap homebrew/cask
+brew tap homebrew/cask-versions
 
 # daily
 brew install --cask slate
@@ -50,3 +51,4 @@ brew install --cask google-chrome
 # brew install --cask screenflow
 # brew install --cask vlc
 
+brew cleanup

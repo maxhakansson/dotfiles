@@ -11,9 +11,9 @@
 #=====================================================================#
 #  Min  |  Hour  |  Mday  |  Month  |  Wday  |  Command               #
 #=====================================================================#
-   0       3        *        *         *        $HOME/code/dotfiles/cron/daily-nighttime.sh
-   0       14       *        *         *        $HOME/code/dotfiles/cron/twice-daily-daytime.sh
-   0       20       *        *         *        $HOME/code/dotfiles/cron/twice-daily-daytime.sh
-   0       0        *        *         0        $HOME/code/dotfiles/cron/weekly.sh
+   0       3        *        *         *        $HOME/dotfiles/cron/daily-nighttime.sh
+   0       14       *        *         *        $HOME/dotfiles/cron/twice-daily-daytime.sh
+   0       20       *        *         *        $HOME/dotfiles/cron/twice-daily-daytime.sh
+   0       0        *        *         0        $HOME/dotfiles/cron/weekly.sh
 #=====================================================================#
 

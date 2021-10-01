@@ -5,17 +5,6 @@ for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
 done
 unset file
 
-# generic colouriser
-GRC=`which grc`
-if [ "$TERM" != dumb ] && [ -n "$GRC" ]
-    then
-        alias colourify="$GRC -es --colour=auto"
-        alias configure='colourify ./configure'
-        for app in {diff,make,gcc,g++,ping,traceroute}; do
-            alias "$app"='colourify '$app
-    done
-fi
-
 # highlighting inside manpages and elsewhere
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
@@ -76,11 +65,11 @@ export PATH="/usr/local/sbin:$PATH"
 #export PATH="~/tizen-studio/tools/ide/bin:~/tizen-studio/tools:$PATH"
 
 # Dotfiles
-export PATH="~/dotfiles/bin:$PATH"
+export PATH="${HOME}/dotfiles/bin:$PATH"
 
 # Android
-export ANDROID_HOME=/Users/$USER/Library/Android/sdk
-export ANDROID_SDK=/Users/$USER/Library/Android/sdk
+export ANDROID_HOME="${HOME}/Library/Android/sdk"
+export ANDROID_SDK="${HOME}/Library/Android/sdk"
 export PATH="$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$ANDROID_SDK/tools/bin:$PATH"
 
 # Homebrew

@@ -23,10 +23,8 @@ brew upgrade
 # brew install bash
 brew install zsh
 brew tap homebrew/versions
+brew tap adoptopenjdk/openjdk
 # brew install bash-completion2
-
-# generic colouriser  http://kassiopeia.juls.savba.sk/~garabik/software/grc/
-brew install grc
 
 # Install wget with IRI support
 brew install wget --with-iri
@@ -54,6 +52,7 @@ brew install git
 #brew install git-flow
 #brew install imagemagick --with-webp
 brew install node # This installs `npm` too using the recommended installation method
+brew install adoptopenjdk13 #JDK for Android
 #brew install pv
 #brew install rename
 #brew install tree

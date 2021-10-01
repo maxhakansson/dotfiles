@@ -1021,7 +1021,7 @@
 	<key>NSFontPanelAttributes</key>
 	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/code/dotfiles/prefs</string>
+	<string>~/dotfiles/prefs</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{958, 481}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -2680,7 +2680,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/max/code/dotfiles/prefs</string>
+	<string>~/dotfiles/prefs</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>

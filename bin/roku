@@ -1,13 +1,13 @@
 if [[ $1 == "-r" ]]
 then
-    cat manifest | while read line; do
-        if [[ "$line" == build_version=* ]]
-        then
-        	number=`echo $line | cut -c 15-18`
-            let number++
-        	sed -i "" "s/build_version\=[0-9]*/build_version\=$number/" manifest
-        fi
-	done
+    # cat manifest | while read line; do
+    #     if [[ "$line" == build_version=* ]]
+    #     then
+    #         number=`echo $line | cut -c 15-18`
+    #         let number++
+    #         sed -i "" "s/build_version\=[0-9]*/build_version\=$number/" manifest
+    #     fi
+    # done
 
     zip -q -9 -r --exclude=*.svn* --exclude=*.DS_Store* --exclude=*.zip* --exclude=*.git* --exclude=*.project* --exclude=*.sh* deploy.zip .
 
