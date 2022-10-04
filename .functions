@@ -47,7 +47,7 @@ log() {
 function server() {
 	local port="${1:-9090}"
 	open "http://localhost:${port}/" &
-	python -m SimpleHTTPServer "$port"
+	python3 -m http.server "$port"
 }
 
 

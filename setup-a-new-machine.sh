@@ -11,9 +11,9 @@ mkdir -p ~/migration/home
 cd ~/migration
 
 # what is worth reinstalling?
-brew leaves      		> brew-list.txt    # all top-level brew installs
-brew cask list 			> cask-list.txt
-npm list -g --depth=0 	> npm-g-list.txt
+brew leaves           > brew-list.txt    # all top-level brew installs
+brew list --cask      > cask-list.txt
+npm list -g --depth=0 > npm-g-list.txt
 
 
 # then compare brew-list to what's in `brew.sh`
@@ -131,9 +131,6 @@ export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 ###
 mkdir "${HOME}/.npm-packages"
 
-# fancy listing of recent branches
-npm install -g git-recent
-
 # sexy git diffs
 npm install -g diff-so-fancy
 
@@ -172,7 +169,7 @@ echo $BASH_VERSION # should be 4.x not the old 3.2.X
 
 
 # setting up the sublime symlink
-ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin
+# ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin
 
 
 ###

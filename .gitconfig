@@ -110,3 +110,5 @@
     template = /Users/max/.stCommitMsg
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main

@@ -12,15 +12,10 @@ alias mv='mv -v'
 alias rm='rm -i -v'
 alias cp='cp -v'
 
-alias cask='brew cask' # i <3 u cask
+alias cask='brew --cask' # i <3 u cask
 alias where=which # sometimes i forget
-alias brwe=brew  #typos
 
-alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
-
-alias ag='ag -f --hidden'
-# handy things
-alias spotify="osascript ~/code/SpotifyControl/SpotifyControl.scpt"
+alias hosts='sudo $EDITOR /etc/hosts'
 
 ###
 # time to upgrade `ls`
@@ -48,7 +43,6 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 function clone() {
     git clone --depth=1 $1
     cd $(basename ${1%.*})
-    bower install &
     npm install
 }
 alias push="git push"
@@ -100,10 +94,10 @@ alias emptytrash=" \
     sudo rm -rfv /Volumes/*/.Trashes; \
     rm -rfv ~/.Trash/*; \
     sudo rm -v /private/var/vm/sleepimage; \
-    rm -rv \"/Users/max/Library/Application Support/stremio/Cache\";  \
-    rm -rv \"/Users/max/Library/Application Support/stremio/stremio-cache\" \
+    rm -rv \"~/Library/Application Support/stremio/Cache\";  \
+    rm -rv \"~/Library/Application Support/stremio/stremio-cache\" \
 "
 
 # Update installed Ruby gems, Homebrew, npm, and their installed packages
-alias brew_update="brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor; npm-check -g -u"
+alias brew_update="brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew prune; brew doctor; npm-check -g -u"
 alias update_brew_npm_gem='brew_update; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update --no-document'
