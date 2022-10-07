@@ -141,6 +141,9 @@ npm install -g diff-so-fancy
 npm install --global trash-cli
 
 
+# antigen
+git clone https://github.com/zsh-users/antigen.git ~/code/antigen
+
 # github.com/rupa/z   - oh how i love you
 # Install with homebrew instead of git clone https://github.com/rupa/z.git ~/code/z
 # consider reusing your current .z file if possible. it's painful to rebuild :)
@@ -158,12 +161,19 @@ npm install --global trash-cli
 sudo easy_install Pygments
 
 
-# change to bash 4 (installed by homebrew)
-BASHPATH=$(brew --prefix)/bin/bash
-#sudo echo $BASHPATH >> /etc/shells
-sudo bash -c 'echo $(brew --prefix)/bin/bash >> /etc/shells'
-chsh -s $BASHPATH # will set for current user only.
-echo $BASH_VERSION # should be 4.x not the old 3.2.X
+# # change to bash 4 (installed by homebrew)
+# BASHPATH=$(brew --prefix)/bin/bash
+# #sudo echo $BASHPATH >> /etc/shells
+# sudo bash -c 'echo $(brew --prefix)/bin/bash >> /etc/shells'
+# chsh -s $BASHPATH # will set for current user only.
+# echo $BASH_VERSION # should be 4.x not the old 3.2.X
+# # Later, confirm iterm settings aren't conflicting.
+
+
+# change to zsh (installed by homebrew)
+ZSHPATH=$(which zsh)
+sudo echo $ZSHPATH >> /etc/shells
+chsh -s $ZSHPATH # will set for current user only.
 # Later, confirm iterm settings aren't conflicting.
 
 

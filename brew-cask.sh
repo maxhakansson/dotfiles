@@ -2,7 +2,7 @@
 
 
 # to maintain cask ....
-#     brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup`
+# brew update && brew upgrade && brew cleanup
 
 
 # Install native apps
@@ -27,6 +27,8 @@ brew install --cask visual-studio-code
 # brew install --cask diffmerge
 brew install --cask docker
 # brew install --cask java
+brew tap adoptopenjdk/openjdk
+brew install --cask adoptopenjdk16
 brew install --cask virtualbox
 brew install --cask sourcetree
 brew install --cask postman
@@ -40,10 +42,6 @@ brew install --cask android-studio
 
 # browsers
 brew install --cask google-chrome
-# brew install --cask google-chrome-canary
-# brew install --cask firefoxnightly
-# brew install --cask webkit-nightly
-# brew install --cask chromium
 # brew install --cask torbrowser
 
 # less often

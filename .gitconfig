@@ -17,7 +17,7 @@
 
 
 [core]
-	excludesfile = /Users/mhakanss/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
 
 [pager]
@@ -107,6 +107,6 @@
 [difftool "diffmerge"]
     cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [commit]
-    template = /Users/max/.stCommitMsg
+    template = ~/.stCommitMsg
 [pull]
 	rebase = false
