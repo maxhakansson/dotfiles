@@ -139,7 +139,7 @@ npm install --global trash-cli
 
 
 # antigen
-git clone https://github.com/zsh-users/antigen.git ~/code/antigen
+curl -L git.io/antigen > ~/code/antigen.zsh
 
 # github.com/rupa/z   - oh how i love you
 # Install with homebrew instead of git clone https://github.com/rupa/z.git ~/code/z

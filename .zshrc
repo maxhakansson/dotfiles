@@ -11,9 +11,29 @@ fpath=( "$HOME/.zfunctions" $fpath )
 
 
 # antigen time!
-source ~/code/antigen/antigen.zsh
-# antigen init ~/.antigenrc
-source ~/.antigenrc
+source ~/code/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+# antigen bundle git
+# antigen bundle command-not-found
+# antigen bundle osx
+# antigen bundle docker
+
+# Load bundles from external repos
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+# antigen theme denysdovhan/spaceship-prompt
+antigen theme robbyrussell
+
+# Tell Antigen that you're done.
+antigen apply
+
 
 export PURE_GIT_UNTRACKED_DIRTY=0
 
