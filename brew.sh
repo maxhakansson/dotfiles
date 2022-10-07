@@ -44,7 +44,7 @@ brew install mtr
 
 # Install other useful binaries
 #brew install the_silver_searcher
-#brew install fzf
+brew install fzf
 
 brew install z
 brew install git
