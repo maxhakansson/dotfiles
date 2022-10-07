@@ -65,6 +65,7 @@ brew install ngrok
 #brew install android-platform-tools
 brew install pidcat   # colored logcat guy
 brew install telnet
+brew install shpotify
 
 #brew install redis
 #brew install php

@@ -110,3 +110,5 @@
     template = ~/.stCommitMsg
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
