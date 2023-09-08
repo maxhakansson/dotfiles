@@ -64,8 +64,8 @@ export PATH="/usr/local/sbin:$PATH"
 # Tizen
 #export PATH="~/tizen-studio/tools/ide/bin:~/tizen-studio/tools:$PATH"
 
-# LG webOS
-export LG_WEBOS_TV_SDK_HOME="$HOME/webos"
+# Setting the LG_WEBOS_TV_SDK_HOME variable to the parent directory of CLI
+export LG_WEBOS_TV_SDK_HOME="${HOME}/webos"
 if [ -d "$LG_WEBOS_TV_SDK_HOME/CLI/bin" ]; then
   # Setting the WEBOS_CLI_TV variable to the bin directory of CLI
   export WEBOS_CLI_TV="$LG_WEBOS_TV_SDK_HOME/CLI/bin"
@@ -89,6 +89,9 @@ export GOPATH=$HOME/go # don't forget to change your path correctly!
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+
+# Rust
+export PATH=$PATH:$HOME/.cargo/bin
 
 
 # z beats cd most of the time. `brew install z`
