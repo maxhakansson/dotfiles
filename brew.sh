@@ -10,27 +10,23 @@ brew upgrade
 
 
 # GNU core utilities (those that come with OS X are outdated)
-#brew install coreutils
-#brew install moreutils
+brew install coreutils
+brew install moreutils
 # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
 #brew install findutils
 # GNU `sed`, overwriting the built-in `sed`
 #brew install gnu-sed --with-default-names
 
+# Install zsh
+brew install zsh
 
-# Bash 4
-# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
-# brew install bash
-# brew tap homebrew/versions
-# brew install bash-completion2
-
-# Install wget with IRI support
-brew install wget --with-iri
+# Install wget
+brew install wget
 
 # Install more recent versions of some OS X tools
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
-brew install homebrew/dupes/screen
+brew install grep
+brew install openssh
+brew install nano
 
 # mtr - ping & traceroute. best.
 brew install mtr
@@ -41,8 +37,7 @@ brew install mtr
     sudo chown root $mtrlocation/sbin/mtr
 
 
-# Install other useful binaries
-#brew install the_silver_searcher
+# fzf is a general-purpose command-line fuzzy finder
 brew install fzf
 
 brew install z
@@ -51,21 +46,18 @@ brew install git
 #brew install imagemagick --with-webp
 brew install node # This installs `npm` too using the recommended installation method
 brew install adoptopenjdk13 #JDK for Android
-#brew install pv
-#brew install rename
-#brew install tree
-#brew install zopfli
 #brew install ffmpeg --with-libvpx
 brew install ngrok
 #brew install eslint
-#brew install terminal-notifier
 #brew install gradle
 #brew install android-sdk
 #brew install android-platform-tools
 brew install pidcat   # colored logcat guy
+brew install iftop # top for network
 brew install telnet
 brew install shpotify
-
+brew install ncdu # find where your diskspace went
+brew install go
 #brew install redis
 #brew install php
 #brew install awscli

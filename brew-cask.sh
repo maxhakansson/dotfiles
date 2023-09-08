@@ -11,6 +11,7 @@ brew tap homebrew/cask-versions
 
 # daily
 brew install --cask slate
+#brew install --cask rectangle
 brew install --cask dropbox
 brew install --cask alfred
 brew install --cask slack
@@ -34,6 +35,10 @@ brew install --cask sourcetree
 brew install --cask postman
 brew install --cask charles
 brew install --cask android-studio
+
+# open source font package
+# brew tap homebrew/cask-fonts
+# brew install font-inconsolata
 
 # fun
 # brew install --cask limechat
