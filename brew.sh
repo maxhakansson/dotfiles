@@ -58,6 +58,7 @@ brew install telnet
 brew install shpotify
 brew install ncdu # find where your diskspace went
 brew install go
+brew install gnu-tar
 #brew install redis
 #brew install php
 #brew install awscli

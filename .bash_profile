@@ -61,6 +61,9 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
+# Gnu-tar
+export PATH="$HOME/.homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
+
 # Tizen
 #export PATH="~/tizen-studio/tools/ide/bin:~/tizen-studio/tools:$PATH"
 
@@ -81,14 +84,17 @@ export ANDROID_HOME="${HOME}/Library/Android/sdk"
 export ANDROID_SDK="${HOME}/Library/Android/sdk"
 export PATH="$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$ANDROID_SDK/tools/bin:$PATH"
 
+# Kepler SDK
+# source ~/kepler/kepler-sdk/0.2.6557.0/environment-setup-sdk.sh
+# export PATH="$PATH:/usr/local/bin/keplersdktools"
+
 # Homebrew
 export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
 # Golang
 export GOPATH=$HOME/go # don't forget to change your path correctly!
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
+export GOROOT="$(brew --prefix go)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 # Rust
 export PATH=$PATH:$HOME/.cargo/bin
