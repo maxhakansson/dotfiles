@@ -10,8 +10,9 @@ brew upgrade
 
 
 # GNU core utilities (those that come with OS X are outdated)
-brew install coreutils
-brew install moreutils
+#brew install coreutils
+#brew install moreutils
+
 # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
 #brew install findutils
 # GNU `sed`, overwriting the built-in `sed`
@@ -24,9 +25,9 @@ brew install zsh
 brew install wget
 
 # Install more recent versions of some OS X tools
-brew install grep
-brew install openssh
-brew install nano
+#brew install grep
+#brew install openssh
+#brew install nano
 
 # mtr - ping & traceroute. best.
 brew install mtr
@@ -41,17 +42,13 @@ brew install mtr
 brew install fzf
 
 brew install z
-brew install git
+#brew install git
 #brew install git-flow
 #brew install imagemagick --with-webp
 brew install node # This installs `npm` too using the recommended installation method
 brew install adoptopenjdk13 #JDK for Android
 #brew install ffmpeg --with-libvpx
 brew install ngrok
-#brew install eslint
-#brew install gradle
-#brew install android-sdk
-#brew install android-platform-tools
 brew install pidcat   # colored logcat guy
 brew install iftop # top for network
 brew install telnet

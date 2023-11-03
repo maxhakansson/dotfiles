@@ -135,7 +135,7 @@ mkdir "${HOME}/.npm-packages"
 npm install -g diff-so-fancy
 
 # trash as the safe `rm` alternative
-npm install --global trash-cli
+npm install -g trash-cli
 
 
 # antigen
@@ -145,18 +145,6 @@ curl -L git.io/antigen > ~/code/antigen.zsh
 # Install with homebrew instead of git clone https://github.com/rupa/z.git ~/code/z
 # consider reusing your current .z file if possible. it's painful to rebuild :)
 # z is hooked up in .bash_profile
-
-# my magic photobooth symlink -> dropbox. I love it.
-# 	 + first move Photo Booth folder out of Pictures
-# 	 + then start Photo Booth. It'll ask where to put the library.
-# 	 + put it in Dropbox/public
-# 	* Now… you can record photobooth videos quickly and they upload to dropbox DURING RECORDING
-# 	* then you grab public URL and send off your video message in a heartbeat.
-
-
-# for the c alias (syntax highlighted cat)
-sudo easy_install Pygments
-
 
 # # change to bash 4 (installed by homebrew)
 # BASHPATH=$(brew --prefix)/bin/bash
@@ -196,9 +184,9 @@ chsh -s $ZSHPATH # will set for current user only.
 # prezto and antigen communties also have great stuff
 #   github.com/sorin-ionescu/prezto/blob/master/modules/utility/init.zsh
 
-# set up osx defaults
+# set up macOS defaults
 #   maybe something else in here https://github.com/hjuutilainen/dotfiles/blob/master/bin/osx-user-defaults.sh
-sh .osx
+sh .macos
 
 
 ##############################################################################################################

@@ -24,6 +24,7 @@ brew install --cask flux
 brew install --cask iterm2
 brew install --cask visual-studio-code
 # brew install --cask sublime-text
+brew install --cask sublime-merge
 # brew install --cask imageoptim
 # brew install --cask diffmerge
 brew install --cask docker

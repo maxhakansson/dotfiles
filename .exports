@@ -6,24 +6,55 @@ export MANPAGER="less -X"
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
-# Larger bash history (allow 32³ entries; default is 500)
-export HISTSIZE=32768
-export HISTFILESIZE=$HISTSIZE
-export HISTCONTROL=ignoredups
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-# timestamps for bash history. www.debian-administration.org/users/rossen/weblog/1
-# saved for later analysis
-HISTTIMEFORMAT='%F %T '
-export HISTTIMEFORMAT
 
-# here's LS_COLORS
-# github.com/trapd00r/LS_COLORS
-# command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
-# eval "$(gdircolors -b ~/.dircolors)"
+##
+## PATH
+##
 
-# Make some commands not show up in history
-export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
+# NPM (Use .npmrc instead)
+export NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+# # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+# unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+# export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-export ROKU_IP=192.168.0.50
-export ROKU_PASSWORD=developer
+# Gnu-tar
+export PATH="$HOME/.homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
+
+# Tizen
+#export PATH="~/tizen-studio/tools/ide/bin:~/tizen-studio/tools:$PATH"
+
+# Setting the LG_WEBOS_TV_SDK_HOME variable to the parent directory of CLI
+export LG_WEBOS_TV_SDK_HOME="${HOME}/webos"
+if [ -d "$LG_WEBOS_TV_SDK_HOME/CLI/bin" ]; then
+  # Setting the WEBOS_CLI_TV variable to the bin directory of CLI
+  export WEBOS_CLI_TV="$LG_WEBOS_TV_SDK_HOME/CLI/bin"
+  # Adding the bin directory of CLI to the PATH variable
+  export PATH="$PATH:$WEBOS_CLI_TV"
+fi
+
+# Dotfiles
+export PATH="${HOME}/dotfiles/bin:$PATH"
+
+# Android
+export ANDROID_HOME="${HOME}/Library/Android/sdk"
+export ANDROID_SDK="${HOME}/Library/Android/sdk"
+export PATH="$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$ANDROID_SDK/tools/bin:$PATH"
+
+# Kepler SDK
+# source ~/kepler/kepler-sdk/0.2.6557.0/environment-setup-sdk.sh
+# export PATH="$PATH:/usr/local/bin/keplersdktools"
+
+# Homebrew
+export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
+
+# Golang
+export GOPATH=$HOME/go # don't forget to change your path correctly!
+export GOROOT="$(brew --prefix go)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
+# Rust
+export PATH=$PATH:$HOME/.cargo/bin
+

@@ -7,8 +7,10 @@
 ## Setup
 #### installing & using
 
-* fork this to your own acct
-* clone that repo
+* https://cpojer.net/posts/set-up-a-new-mac-fast
+* `xcode-select --install` and `sudo xcodebuild -license`
+* set up a new SSH key via GitHub → `Settings` → `SSH and GPG Keys` → `New SSH key`
+* Clone this repo
 * read and run parts of `setup-a-new-machine.sh`
 * read and run `symlink-setup.sh`
   * git config needs attention, read the notes.
@@ -53,10 +55,6 @@ Lastly, I use `open .` to open Finder from this path. (That's just available nor
 
 ## overview of files
 
-####  Automatic config
-* `.vimrc`, `.vim` - vim config, obv.
-* `.inputrc` - behavior of the actual prompt line
-
 #### shell environment
 * `.aliases`
 * `.bash_profile`
@@ -69,7 +67,7 @@ Lastly, I use `open .` to open Finder from this path. (That's just available nor
 #### manual run
 * `setup-a-new-machine.sh` - random apps i need installed
 * `symlink-setup.sh`  - sets up symlinks for all dotfiles and vim config.
-* `.osx` - run on a fresh osx setup
+* `.macos` - run on a fresh osx setup
 * `brew.sh` & `brew-cask.sh` - homebrew initialization
 
 #### git, brah
@@ -106,7 +104,7 @@ export PATH
 Mathias's repo is the canonical for this, but you should probably run his or mine after reviewing it.
 
 ```bash
-./.osx
+./.macos
 ```
 
 ### `~/bin`
