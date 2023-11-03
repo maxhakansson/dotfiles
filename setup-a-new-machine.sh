@@ -186,7 +186,7 @@ chsh -s $ZSHPATH # will set for current user only.
 
 # set up macOS defaults
 #   maybe something else in here https://github.com/hjuutilainen/dotfiles/blob/master/bin/osx-user-defaults.sh
-sh .macos
+./macos.sh
 
 
 ##############################################################################################################

@@ -18,6 +18,7 @@ brew install --cask slack
 brew install --cask spotify
 brew install --cask copyq
 brew install --cask flux
+brew install --cask ao # Open Source MS To Do
 # brew install --cask spectacle
 
 # dev
