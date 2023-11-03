@@ -131,9 +131,6 @@ export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 ###
 mkdir "${HOME}/.npm-packages"
 
-# sexy git diffs
-npm install -g diff-so-fancy
-
 # trash as the safe `rm` alternative
 npm install -g trash-cli
 

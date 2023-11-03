@@ -56,6 +56,7 @@ brew install shpotify
 brew install ncdu # find where your diskspace went
 brew install go
 brew install gnu-tar
+brew install diff-so-fancy
 #brew install redis
 #brew install php
 #brew install awscli
