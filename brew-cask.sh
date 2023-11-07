@@ -10,7 +10,7 @@ brew tap homebrew/cask
 brew tap homebrew/cask-versions
 
 # daily
-brew install --cask slate
+brew install --cask slate # fertigt-slate for M2 chip
 brew install --cask dropbox
 brew install --cask alfred
 brew install --cask slack
