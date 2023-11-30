@@ -10,7 +10,7 @@ alias -- -="cd -"
 # mv, rm, cp
 alias mv='mv -v'
 # alias rm='rm -i -v'
-alias rm='trash' # npm install -g trash-cli
+# alias rm='trash' # npm install -g trash-cli
 alias cp='cp -v'
 
 alias hosts='sudo $EDITOR /etc/hosts'

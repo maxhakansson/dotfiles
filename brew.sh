@@ -63,3 +63,5 @@ brew install diff-so-fancy
 
 # Remove outdated versions from the cellar
 brew cleanup
+
+# brew autoremove removes all unused dependencies

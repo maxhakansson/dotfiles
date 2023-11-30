@@ -130,6 +130,7 @@ export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 ### install of common things
 ###
 mkdir "${HOME}/.npm-packages"
+mkdir "${HOME}/.npm-packages/lib"
 
 # trash as the safe `rm` alternative
 npm install -g trash-cli
