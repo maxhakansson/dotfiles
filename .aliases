@@ -1,11 +1,5 @@
-# Easier navigation: .., ..., ~ and -
-alias ..="cd .."
-alias cd..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
+# Use z for navidation
+alias cd="z"
 
 # mv, rm, cp
 alias mv='mv -v'
@@ -87,8 +81,8 @@ alias emptytrash=" \
 alias python=python3
 
 # Run ffmpeg through Docker
-alias ffmpeg='docker run -v=`pwd`:/tmp/ffmpeg opencoconut/ffmpeg'
-alias avconv='docker run -v=`pwd`:/files jedimonkey/avconv'
+alias ffmpeg='docker run --rm -v=`pwd`:/tmp/ffmpeg opencoconut/ffmpeg'
+alias avconv='docker run --rm -v=`pwd`:/files jedimonkey/avconv'
 
 # Run SVTPlay-dl through docker
 alias svtplay-dl='docker run -it --rm  -u $(id -u):$(id -g)  -v "$(pwd):/data" spaam/svtplay-dl'

@@ -66,10 +66,18 @@ setopt share_history
 # uncomment to finish profiling
 # zprof
 
-
+export NVM_DIR="$HOME/.nvm"
+[ -s "$HOME/.homebrew/opt/nvm/nvm.sh" ] && \. "$HOME/.homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Load default dotfiles
 source ~/.bash_profile
 
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+
+# Zoxide (better cd)
+eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

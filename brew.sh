@@ -41,7 +41,10 @@ brew install mtr
 # fzf is a general-purpose command-line fuzzy finder
 brew install fzf
 
-brew install z
+# brew install z
+brew install zoxide # better cd
+
+brew install bat
 #brew install git
 #brew install git-flow
 #brew install imagemagick --with-webp

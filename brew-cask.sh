@@ -29,8 +29,8 @@ brew install --cask sublime-merge
 # brew install --cask diffmerge
 brew install --cask docker
 # brew install --cask java
-brew tap adoptopenjdk/openjdk
-brew install --cask adoptopenjdk16
+brew tap homebrew/cask-versions
+brew install --cask temurin8 # adoptopenjdk16 is deprecayed
 brew install --cask virtualbox
 brew install --cask sourcetree
 brew install --cask postman
