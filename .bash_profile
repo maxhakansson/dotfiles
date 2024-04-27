@@ -5,12 +5,6 @@ for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
 done
 unset file
 
-# z beats cd most of the time. `brew install z`
-if which brew > /dev/null; then
-    zpath="$(brew --prefix)/etc/profile.d/z.sh"
-    [ -s $zpath ] && source $zpath
-fi;
-
 ##
 ## Completion…
 ##

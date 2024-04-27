@@ -43,7 +43,7 @@ brew install fzf
 
 # brew install z
 brew install zoxide # better cd
-
+brew install fd # better find (used by fzf internally)
 brew install bat
 #brew install git
 #brew install git-flow

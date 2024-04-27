@@ -58,3 +58,7 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 # Rust
 export PATH=$PATH:$HOME/.cargo/bin
 
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$HOME/.homebrew/opt/nvm/nvm.sh" ] && \. "$HOME/.homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion

@@ -1,14 +1,13 @@
-# uncomment to profile prompt startup with zprof
-# zmodload zsh/zprof
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 
 # history
 SAVEHIST=100000
-
-# vim bindings
-bindkey -v
-
-fpath=( "$HOME/.zfunctions" $fpath )
-
 
 # antigen time!
 source ~/code/antigen.zsh
@@ -29,13 +28,11 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
 # antigen theme denysdovhan/spaceship-prompt
-antigen theme robbyrussell
+# antigen theme robbyrussell
+antigen theme romkatv/powerlevel10k
 
 # Tell Antigen that you're done.
 antigen apply
-
-
-export PURE_GIT_UNTRACKED_DIRTY=0
 
 # Automatically list directory contents on `cd`.
 auto-ls () {
@@ -46,38 +43,20 @@ auto-ls () {
 chpwd_functions=( auto-ls $chpwd_functions )
 
 
-# Enable autosuggestions automatically
-# zle-line-init() {
-#     zle autosuggest-start
-# }
-
-# zle -N zle-line-init
-
-
 # history mgmt
 # http://www.refining-linux.org/archives/49/ZSH-Gem-15-Shared-history/
 setopt inc_append_history
 setopt share_history
 
-
-# zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-
-# uncomment to finish profiling
-# zprof
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$HOME/.homebrew/opt/nvm/nvm.sh" ] && \. "$HOME/.homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 # Load default dotfiles
 source ~/.bash_profile
 
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --zsh)"
 
 # Zoxide (better cd)
 eval "$(zoxide init zsh)"
 
+# Fzf specific config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
