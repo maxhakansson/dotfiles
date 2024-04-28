@@ -484,9 +484,7 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 # Login items                                                  #
 ###############################################################################
 
-osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Alfred 5.app", hidden:true}'
-osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Slate.app", hidden:true}'
-osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Maccy.app", hidden:true}'
+osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Raycast.app", hidden:true}'
 
 ###############################################################################
 # Kill affected applications                                                  #

@@ -8,14 +8,11 @@
 # Install native apps
 brew tap homebrew/cask
 brew tap homebrew/cask-versions
-
 # daily
-brew install --cask slate # fertigt-slate for M2 chip
+brew install --cask raycast
 brew install --cask dropbox
-brew install --cask alfred
 brew install --cask slack
 brew install --cask spotify
-brew install --cask maccy
 brew install --cask flux
 brew install --cask ao # Open Source MS To Do
 # brew install --cask spectacle
