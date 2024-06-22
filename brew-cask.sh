@@ -7,14 +7,12 @@
 
 # Install native apps
 brew tap homebrew/cask
-brew tap homebrew/cask-versions
 # daily
 brew install --cask raycast
 brew install --cask dropbox
 brew install --cask slack
 brew install --cask spotify
 brew install --cask flux
-brew install --cask ao # Open Source MS To Do
 # brew install --cask spectacle
 
 # dev
@@ -38,10 +36,6 @@ brew install --cask android-studio
 # brew tap homebrew/cask-fonts
 # brew install font-inconsolata
 
-# fun
-# brew install --cask limechat
-# brew install --cask miro-video-converter
-# brew install --cask horndis               # usb tethering
 
 # browsers
 brew install --cask google-chrome

@@ -10,7 +10,6 @@ dockutil --no-restart --add "/Applications/Launchpad.app"
 dockutil --no-restart --add "/System/Applications/System Settings.app"
 dockutil --no-restart --add "/Applications/iTerm.app"
 dockutil --no-restart --add "/Applications/Visual Studio Code.app"
-dockutil --no-restart --add "/Applications/Ao.app"
 
 killall Dock
 
