@@ -8,7 +8,7 @@
 # Install native apps
 brew tap homebrew/cask
 # daily
-brew install --cask raycast
+brew install --cask raycast # Replaces slate, copyq and Alfred
 brew install --cask dropbox
 brew install --cask slack
 brew install --cask spotify
