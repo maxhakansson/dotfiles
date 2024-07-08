@@ -21,12 +21,12 @@
 	attributesfile = ~/.gitattributes
 
 [pager]
-    # insanely beautiful diffs ==> npm install -g diff-so-fancy
+    # insanely beautiful diffs ==> brew install diff-so-fancy
     diff = diff-so-fancy | less --tabs=4 -RFX
     show = diff-so-fancy | less --tabs=4 -RFX
 
-[interactive]
-    diffFilter = "diff-so-fancy"
+#[interactive]
+#    diffFilter = "diff-so-fancy"
 
 # so much color
 [color]
@@ -80,9 +80,7 @@
 [user]
 	name = Max Hakansson
 	email = mhakanss@conviva.com
-[mergetool "diffmerge"]
-    cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
-    trustExitCode = true
+
 [mergetool]
     keepBackup = false
 
@@ -97,19 +95,16 @@
 
 [fetch]
     prune = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[diff]
-    tool = diffmerge
-[difftool "diffmerge"]
-    cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-[commit]
-    template = ~/.stCommitMsg
+
+#[commit]
+#    template = ~/.stCommitMsg
 [pull]
 	rebase = false
 [init]
 	defaultBranch = main
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
