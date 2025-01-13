@@ -16,16 +16,16 @@ brew install --cask flux
 # brew install --cask spectacle
 
 # dev
-brew install --cask iterm2
+brew install --cask ghostty #terminal
 brew install --cask visual-studio-code
 # brew install --cask sublime-text
 brew install --cask sublime-merge
 # brew install --cask imageoptim
 # brew install --cask diffmerge
 brew install --cask docker
-# brew install --cask java
 brew tap homebrew/cask-versions
-brew install --cask temurin8 # adoptopenjdk16 is deprecayed
+brew install --cask temurin@8 # adoptopenjdk16 is deprecated
+brew install --cask temurin@17
 brew install --cask virtualbox
 brew install --cask sourcetree
 brew install --cask postman

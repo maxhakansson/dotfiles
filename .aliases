@@ -14,6 +14,12 @@ alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 
+# fix for nvm causing slow terminal start
+# https://stackoverflow.com/questions/65846945/terminal-slow-to-start-first-time-due-to-xcodebuild
+alias manpath=false
+
+# fix for nvm slowing things down. it only loads nvm when you try to use it.
+# alias nvm="unalias nvm; [ -s "$HOME/.homebrew/opt/nvm/nvm.sh" ] && . "$HOME/.homebrew/opt/nvm/nvm.sh"; nvm $@"
 
 ###
 # GIT STUFF

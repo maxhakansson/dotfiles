@@ -43,6 +43,14 @@ export ANDROID_HOME="${HOME}/Library/Android/sdk"
 export ANDROID_SDK="${HOME}/Library/Android/sdk"
 export PATH="$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$ANDROID_SDK/tools/bin:$PATH"
 
+# Java
+export JAVA_17_HOME=$(/usr/libexec/java_home -v 17)
+export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8.0)
+alias java17="export JAVA_HOME=$JAVA_17_HOME"
+alias java8="export JAVA_HOME=$JAVA_8_HOME"
+#set default to Java 17
+java17
+
 # Kepler SDK
 # source ~/kepler/kepler-sdk/0.2.6557.0/environment-setup-sdk.sh
 # export PATH="$PATH:/usr/local/bin/keplersdktools"
@@ -60,5 +68,5 @@ export PATH=$PATH:$HOME/.cargo/bin
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$HOME/.homebrew/opt/nvm/nvm.sh" ] && \. "$HOME/.homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "$HOME/.homebrew/opt/nvm/nvm.sh" ] && \. "$HOME/.homebrew/opt/nvm/nvm.sh"  # This loads nvm. Commented out. Using nvm alias instead to reduce terminal stertup time.
 [ -s "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
