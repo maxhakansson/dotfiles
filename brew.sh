@@ -49,7 +49,6 @@ brew install git # Avoid slowdowns of terminal by using git from homebrew
 #brew install git-flow
 #brew install imagemagick --with-webp
 brew install node # This installs `npm` too using the recommended installation method
-brew install adoptopenjdk13 #JDK for Android
 #brew install ffmpeg --with-libvpx
 brew install ngrok
 brew install pidcat   # colored logcat guy
