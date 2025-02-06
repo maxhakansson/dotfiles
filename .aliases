@@ -87,10 +87,10 @@ alias avconv='docker run --rm -v=`pwd`:/files jedimonkey/avconv'
 # Run SVTPlay-dl through docker
 alias svtplay-dl='docker run -it --rm  -u $(id -u):$(id -g)  -v "$(pwd):/data" spaam/svtplay-dl'
 
-# youtube-dl
+# youtube download
 alias yt-dl='docker run \
                   --rm -i \
                   -e PGID=$(id -g) \
                   -e PUID=$(id -u) \
-                  -v "$(pwd)":/workdir:rw \
-                  mikenye/youtube-dl'
+                  -v "$(pwd)":/download:rw \
+                  ghcr.io/jim60105/yt-dlp'

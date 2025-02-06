@@ -38,7 +38,8 @@ brew install --cask android-studio
 
 
 # browsers
-brew install --cask google-chrome
+brew install --cask zen-browser
+# brew install --cask google-chrome
 # brew install --cask torbrowser
 
 # less often
