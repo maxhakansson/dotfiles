@@ -44,8 +44,8 @@ export ANDROID_SDK="${HOME}/Library/Android/sdk"
 export PATH="$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$ANDROID_SDK/tools/bin:$PATH"
 
 # Java
-export JAVA_17_HOME=$(/usr/libexec/java_home -v 17)
-export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8.0)
+export JAVA_17_HOME="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home" # $(/usr/libexec/java_home -v 17)
+export JAVA_8_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home" # $(/usr/libexec/java_home -v 1.8.0)
 alias java17="export JAVA_HOME=$JAVA_17_HOME"
 alias java8="export JAVA_HOME=$JAVA_8_HOME"
 #set default to Java 17
@@ -60,13 +60,31 @@ export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
 # Golang
 export GOPATH=$HOME/go # don't forget to change your path correctly!
-export GOROOT="$(brew --prefix go)/libexec"
+export GOROOT="${HOME}/.homebrew/opt/go/libexec" # "$(brew --prefix go)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 # Rust
 export PATH=$PATH:$HOME/.cargo/bin
 
 # NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$HOME/.homebrew/opt/nvm/nvm.sh" ] && \. "$HOME/.homebrew/opt/nvm/nvm.sh"  # This loads nvm. Commented out. Using nvm alias instead to reduce terminal stertup time.
-[ -s "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$HOME/.homebrew/opt/nvm/nvm.sh" ] && \. "$HOME/.homebrew/opt/nvm/nvm.sh"  # This loads nvm. Commented out. Using nvm alias instead to reduce terminal stertup time.
+# [ -s "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# The above is very slow. Below uses lazy loading to speed up terminal startup time.
+# https://gist.github.com/fl0w/07ce79bd44788f647deab307c94d6922
+# Add every binary that requires nvm, npm or node to run to an array of node globals
+NODE_GLOBALS=(`find ~/.nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
+NODE_GLOBALS+=("node")
+NODE_GLOBALS+=("nvm")
+
+# Lazy-loading nvm + npm on node globals call
+load_nvm () {
+  export NVM_DIR=~/.nvm
+  [ -s "$(brew --prefix nvm)/nvm.sh" ] && . "$(brew --prefix nvm)/nvm.sh"
+}
+
+# Making node global trigger the lazy loading
+for cmd in "${NODE_GLOBALS[@]}"; do
+  eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
+done
