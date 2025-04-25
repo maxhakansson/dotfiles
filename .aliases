@@ -87,7 +87,7 @@ alias emptytrash=" \
 alias python=python3
 
 # Run ffmpeg through Docker
-alias ffmpeg='docker run --rm -v=`pwd`:/tmp/ffmpeg opencoconut/ffmpeg'
+alias ffmpeg='docker run -i --rm -u $UID:$GROUPS -v "$PWD:$PWD" -w "$PWD" mwader/static-ffmpeg:7.1.1'
 alias avconv='docker run --rm -v=`pwd`:/files jedimonkey/avconv'
 
 # Run SVTPlay-dl through docker
