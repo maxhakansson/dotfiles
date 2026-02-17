@@ -56,6 +56,7 @@ brew install iftop # top for network
 brew install telnet
 brew install shpotify
 brew install ncdu # find where your diskspace went
+brew install gh #github cli
 brew install go
 brew install gnu-tar
 brew install diff-so-fancy

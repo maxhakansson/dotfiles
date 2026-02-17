@@ -60,3 +60,6 @@ eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Kepler SDK
+source /Users/mhakanss/.kepler/kntools/sdk/0.16.4/environment-setup-sdk.sh

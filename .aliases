@@ -100,3 +100,9 @@ alias yt-dl='docker run \
                   -e PUID=$(id -u) \
                   -v "$(pwd)":/download:rw \
                   ghcr.io/jim60105/yt-dlp'
+
+# Screenshare with Mac Studio
+#alias studio='open vnc://max@"Max’s Mac Studio._rfb._tcp.local"'
+alias studio='open vnc://max@192.168.0.10'
+alias mini='open vnc://max@192.168.0.31'
+
