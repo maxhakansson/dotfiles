@@ -1,14 +1,11 @@
 # Starship Prompt Configuration
 # Docs: https://starship.rs/config/
 
-format = """
-[┌───────────────────────────────────────────>](bold green)
-[│](bold green)$directory$git_branch$git_status
-[└─>](bold green) $character"""
+format = '$all$directory$character'
 
 [character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[➜](bold red)"
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
 
 [directory]
 truncation_length = 3

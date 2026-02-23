@@ -130,5 +130,5 @@ if [[ "$STARSHIP_ENABLED" == "1" ]] && command -v starship &> /dev/null; then
   eval "$(starship init zsh)"
 else
   # Default: Use Powerlevel10k
-  # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 fi
