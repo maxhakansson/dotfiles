@@ -21,12 +21,19 @@
 	attributesfile = ~/.gitattributes
 
 [pager]
-    # insanely beautiful diffs ==> brew install diff-so-fancy
-    diff = diff-so-fancy | less --tabs=4 -RFX
-    show = diff-so-fancy | less --tabs=4 -RFX
+    # Use delta for beautiful diffs (brew install git-delta)
+    diff = delta
+    show = delta
+    log = delta
 
-#[interactive]
-#    diffFilter = "diff-so-fancy"
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # Use n and N to move between diff sections
+    light = false      # Set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    side-by-side = false
+    line-numbers = true
 
 # so much color
 [color]

@@ -9,25 +9,11 @@ brew update
 brew upgrade
 
 
-# GNU core utilities (those that come with OS X are outdated)
-#brew install coreutils
-#brew install moreutils
-
-# GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
-#brew install findutils
-# GNU `sed`, overwriting the built-in `sed`
-#brew install gnu-sed --with-default-names
-
 # Install zsh
 brew install zsh
 
 # Install wget
 brew install wget
-
-# Install more recent versions of some OS X tools
-#brew install grep
-#brew install openssh
-#brew install nano
 
 # mtr - ping & traceroute. best.
 brew install mtr
@@ -40,6 +26,9 @@ brew install mtr
 
 # fzf is a general-purpose command-line fuzzy finder
 brew install fzf
+
+# Install zinit for zsh plugin management
+brew install zinit
 
 # brew install z
 brew install zoxide # better cd
@@ -59,7 +48,9 @@ brew install ncdu # find where your diskspace went
 brew install gh #github cli
 brew install go
 brew install gnu-tar
-brew install diff-so-fancy
+brew install git-delta  # Better diff highlighting (replaces diff-so-fancy)
+brew install fnm        # Fast Node.js version manager (replaces nvm)
+brew install jenv       # Java version manager
 #brew install redis
 #brew install php
 #brew install awscli

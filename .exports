@@ -66,25 +66,16 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 # Rust
 export PATH=$PATH:$HOME/.cargo/bin
 
-# NVM
+# FNM (Fast Node Manager) - replaces nvm
+# fnm is much faster than nvm and automatically switches node versions on cd
+# Initialize fnm - this is fast and doesn't slow down shell startup
+# Note: fnm setup is in .zshrc with 'eval "$(fnm env --use-on-cd)"'
+
+# Jenv - Java version manager
+# Add jenv to PATH for shims
+export PATH="$HOME/.jenv/bin:$PATH"
+# Note: jenv init is in .zshrc with 'eval "$(jenv init -)"'
+
+# Legacy NVM setup (kept for reference, remove after migration)
 # export NVM_DIR="$HOME/.nvm"
-# [ -s "$HOME/.homebrew/opt/nvm/nvm.sh" ] && \. "$HOME/.homebrew/opt/nvm/nvm.sh"  # This loads nvm. Commented out. Using nvm alias instead to reduce terminal stertup time.
-# [ -s "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# The above is very slow. Below uses lazy loading to speed up terminal startup time.
-# https://gist.github.com/fl0w/07ce79bd44788f647deab307c94d6922
-# Add every binary that requires nvm, npm or node to run to an array of node globals
-NODE_GLOBALS=(`find ~/.nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
-NODE_GLOBALS+=("node")
-NODE_GLOBALS+=("nvm")
-
-# Lazy-loading nvm + npm on node globals call
-load_nvm () {
-  export NVM_DIR=~/.nvm
-  [ -s "$(brew --prefix nvm)/nvm.sh" ] && . "$(brew --prefix nvm)/nvm.sh"
-}
-
-# Making node global trigger the lazy loading
-for cmd in "${NODE_GLOBALS[@]}"; do
-  eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
-done
+# [ -s "$HOME/.homebrew/opt/nvm/nvm.sh" ] && \. "$HOME/.homebrew/opt/nvm/nvm.sh"

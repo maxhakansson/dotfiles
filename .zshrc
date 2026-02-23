@@ -9,30 +9,35 @@ fi
 # history
 SAVEHIST=100000
 
-# antigen time!
-source ~/code/antigen.zsh
+# Zinit setup - modern zsh plugin manager
+# Install zinit if not already installed
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-# antigen bundle command-not-found
-# antigen bundle osx
-# antigen bundle docker
+# Load Oh-My-Zsh library
+zinit snippet OMZ::lib
 
-# Load bundles from external repos
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
+# Load plugins
+zinit snippet OMZ::plugins/git/git.plugin.zsh
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
 
-# Load the theme.
-# antigen theme denysdovhan/spaceship-prompt
-# antigen theme robbyrussell
-antigen theme romkatv/powerlevel10k
+# Load Powerlevel10k theme
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-# Tell Antigen that you're done.
-antigen apply
+# Tell zinit we're done
+zinit cdreplay -q
+
 
 # Automatically list directory contents on `cd`.
 auto-ls () {
@@ -48,12 +53,27 @@ chpwd_functions=( auto-ls $chpwd_functions )
 setopt inc_append_history
 setopt share_history
 
-# Load default dotfiles
-source ~/.bash_profile
+# Additional zsh options for better navigation
+setopt AUTO_PUSHD           # Push directories to stack automatically
+setopt PUSHD_IGNORE_DUPS    # Don't push duplicate directories
+setopt PUSHD_SILENT         # Don't print directory stack after pushd/popd
+
+# Load our dotfiles (sourced from former .bash_profile)
+#   Use it to configure your PATH, thus it being first in line.
+for file in ~/.{extra,exports,aliases,functions}; do
+    [ -r "$file" ] && source "$file"
+done
+unset file
 
 
 # Zoxide (better cd)
 eval "$(zoxide init zsh)"
+
+# Fnm (Fast Node Manager)
+eval "$(fnm env --use-on-cd)"
+
+# Jenv (Java version manager)
+eval "$(jenv init -)"
 
 # Fzf specific config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
