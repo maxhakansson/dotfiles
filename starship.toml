@@ -1,7 +1,7 @@
 # Starship Prompt Configuration
 # Docs: https://starship.rs/config/
 
-format = '$all$directory$character'
+format = '$directory$username$git_branch$git_state$git_status$character'
 
 [character]
 success_symbol = "[❯](bold green)"
@@ -13,7 +13,7 @@ truncate_to_repo = true
 style = "bold cyan"
 
 [git_branch]
-symbol = " "
+symbol = ""
 style = "bold purple"
 
 [git_status]

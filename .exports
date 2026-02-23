@@ -3,7 +3,7 @@ export EDITOR="nano"
 export VISUAL="$EDITOR"
 
 # Starship prompt configuration
-export STARSHIP_CONFIG=~/dotfiles/.config/starship.toml
+export STARSHIP_CONFIG="${HOME}/dotfiles/starship.toml"
 
 # Better man page viewing with bat (falls back to less if bat not installed)
 if command -v bat &> /dev/null; then
