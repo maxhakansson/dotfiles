@@ -62,4 +62,4 @@ eval "$(zoxide init zsh)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Kepler SDK
-source /Users/mhakanss/.kepler/kntools/sdk/0.16.4/environment-setup-sdk.sh
+#source /Users/mhakanss/.kepler/kntools/sdk/0.16.4/environment-setup-sdk.sh

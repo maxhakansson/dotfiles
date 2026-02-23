@@ -16,7 +16,7 @@ brew install --cask flux
 # brew install --cask spectacle
 
 # dev
-brew install --cask ghostty #terminal
+brew install --cask iterm2 #terminal
 brew install --cask visual-studio-code
 # brew install --cask sublime-text
 brew install --cask sublime-merge
