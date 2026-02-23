@@ -20,9 +20,6 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 # unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 # export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-# Gnu-tar
-export PATH="$HOME/.homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
-
 # Tizen
 #export PATH="~/tizen-studio/tools/ide/bin:~/tizen-studio/tools:$PATH"
 

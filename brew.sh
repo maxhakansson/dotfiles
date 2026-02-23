@@ -47,7 +47,6 @@ brew install shpotify
 brew install ncdu # find where your diskspace went
 brew install gh #github cli
 brew install go
-brew install gnu-tar
 brew install git-delta  # Better diff highlighting (replaces diff-so-fancy)
 brew install fnm        # Fast Node.js version manager (replaces nvm)
 brew install jenv       # Java version manager
