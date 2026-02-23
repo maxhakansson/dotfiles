@@ -76,6 +76,3 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH="$HOME/.jenv/bin:$PATH"
 # Note: jenv init is in .zshrc with 'eval "$(jenv init -)"'
 
-# Legacy NVM setup (kept for reference, remove after migration)
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$HOME/.homebrew/opt/nvm/nvm.sh" ] && \. "$HOME/.homebrew/opt/nvm/nvm.sh"

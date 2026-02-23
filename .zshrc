@@ -8,6 +8,7 @@ fi
 
 # history
 SAVEHIST=100000
+HISTSIZE=100000
 
 # Zinit setup - modern zsh plugin manager
 # Install zinit if not already installed
@@ -23,20 +24,16 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-# Load Oh-My-Zsh library
-zinit snippet OMZ::lib
+# Load Powerlevel10k theme first
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Load plugins
-zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
-# Load Powerlevel10k theme
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-
-# Tell zinit we're done
-zinit cdreplay -q
+# Load git plugin from Oh-My-Zsh
+zinit snippet OMZ::plugins/git/git.plugin.zsh
 
 
 # Automatically list directory contents on `cd`.
@@ -67,13 +64,19 @@ unset file
 
 
 # Zoxide (better cd)
-eval "$(zoxide init zsh)"
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
 
 # Fnm (Fast Node Manager)
-eval "$(fnm env --use-on-cd)"
+if command -v fnm &> /dev/null; then
+  eval "$(fnm env --use-on-cd)"
+fi
 
 # Jenv (Java version manager)
-eval "$(jenv init -)"
+if command -v jenv &> /dev/null; then
+  eval "$(jenv init -)"
+fi
 
 # Fzf specific config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
