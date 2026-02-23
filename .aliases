@@ -7,14 +7,33 @@ alias mv='mv -v'
 # alias rm='trash' # npm install -g trash-cli
 alias cp='cp -v'
 
+# Modern ls replacement with eza (falls back to gls/ls if not available)
+if command -v eza &> /dev/null; then
+  alias ls='eza --group-directories-first'
+  alias ll='eza -l --group-directories-first'
+  alias la='eza -la --group-directories-first'
+  alias lt='eza --tree --group-directories-first --level=2'
+  alias lta='eza --tree --group-directories-first --level=2 -a'
+fi
+
+# Better cat with bat (preserving original cat for scripts)
+if command -v bat &> /dev/null; then
+  alias cat='bat --paging=never'
+  alias catt='/bin/cat'  # Original cat when needed
+fi
+
+# Modern grep with ripgrep
+if command -v rg &> /dev/null; then
+  alias grep='rg'
+  alias grepp='/usr/bin/grep'  # Original grep when needed
+fi
+
 alias hosts='sudo $EDITOR /etc/hosts'
 
 # Shortcuts
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-
-# Note: FNM replaces nvm - no workarounds needed, fnm is fast!
 
 ###
 # GIT STUFF
@@ -25,8 +44,8 @@ function clone() {
 }
 alias push="git push"
 
-# Undo a `git push`
-alias undopush="git push -f origin HEAD^:master"
+# Undo a `git push` - DANGEROUS! Use with extreme caution
+alias git-force-undo-push="git push -f origin HEAD^:master"
 
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
@@ -48,6 +67,22 @@ alias free_diskspace_report="diskspace_report"
 # Shortcuts
 alias g="git"
 alias ungz="gunzip -k"
+
+# Modern git shortcuts
+alias gst='git status'
+alias gd='git diff'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git pull'
+alias gco='git checkout'
+alias gb='git branch'
+alias glog='git log --oneline --graph --decorate'
+
+# Lazygit (if installed)
+if command -v lazygit &> /dev/null; then
+  alias lg='lazygit'
+fi
 
 # File size
 alias fs="stat -f \"%z bytes\""

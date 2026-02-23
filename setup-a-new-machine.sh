@@ -104,10 +104,6 @@ mkdir "${HOME}/.npm-packages/lib"
 # trash as the safe `rm` alternative
 npm install -g trash-cli
 
-
-# antigen
-curl -L git.io/antigen > ~/code/antigen.zsh
-
 ###
 ##############################################################################################################
 
@@ -116,11 +112,6 @@ curl -L git.io/antigen > ~/code/antigen.zsh
 ##############################################################################################################
 ### remaining configuration
 ###
-
-# go read mathias, paulmillr, gf3, alraa's dotfiles to see what's worth stealing.
-
-# prezto and antigen communties also have great stuff
-#   github.com/sorin-ionescu/prezto/blob/master/modules/utility/init.zsh
 
 # set up macOS defaults
 #   maybe something else in here https://github.com/hjuutilainen/dotfiles/blob/master/bin/osx-user-defaults.sh

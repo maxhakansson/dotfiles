@@ -1,3 +1,11 @@
+
+# Load our dotfiles (sourced from former .bash_profile)
+#   Use it to configure your PATH, thus it being first in line.
+for file in ~/.{extra,exports,aliases,functions}; do
+    [ -r "$file" ] && source "$file"
+done
+unset file
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -7,8 +15,17 @@ fi
 
 
 # history
-SAVEHIST=100000
-HISTSIZE=100000
+SAVEHIST=1000000
+HISTSIZE=1000000
+HISTFILE=~/.zsh_history
+
+# Enhanced history configuration
+setopt EXTENDED_HISTORY          # Write timestamps to history
+setopt HIST_EXPIRE_DUPS_FIRST   # Expire duplicates first
+setopt HIST_IGNORE_DUPS         # Don't record duplicate entries
+setopt HIST_IGNORE_SPACE        # Don't record commands starting with space
+setopt HIST_VERIFY              # Show before executing from history
+setopt HIST_REDUCE_BLANKS       # Remove superfluous blanks
 
 # Zinit setup - modern zsh plugin manager
 # Install zinit if not already installed
@@ -24,8 +41,10 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-# Load Powerlevel10k theme first
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+# Load Powerlevel10k theme first (unless Starship is enabled)
+if [[ "$STARSHIP_ENABLED" != "1" ]]; then
+  zinit ice depth=1; zinit light romkatv/powerlevel10k
+fi
 
 # Load plugins
 zinit light zsh-users/zsh-completions
@@ -34,6 +53,20 @@ zinit light zsh-users/zsh-syntax-highlighting
 
 # Load git plugin from Oh-My-Zsh
 zinit snippet OMZ::plugins/git/git.plugin.zsh
+
+# Initialize completion system (required before fzf-tab)
+autoload -Uz compinit
+compinit
+
+# Load fzf-tab AFTER compinit
+zinit light Aloxaf/fzf-tab                    # Replace tab completion with fzf
+
+# History substring search
+zinit light zsh-users/zsh-history-substring-search
+
+# Bind keys for history substring search
+bindkey '^[[A' history-substring-search-up     # Up arrow
+bindkey '^[[B' history-substring-search-down   # Down arrow
 
 
 # Automatically list directory contents on `cd`.
@@ -55,13 +88,14 @@ setopt AUTO_PUSHD           # Push directories to stack automatically
 setopt PUSHD_IGNORE_DUPS    # Don't push duplicate directories
 setopt PUSHD_SILENT         # Don't print directory stack after pushd/popd
 
-# Load our dotfiles (sourced from former .bash_profile)
-#   Use it to configure your PATH, thus it being first in line.
-for file in ~/.{extra,exports,aliases,functions}; do
-    [ -r "$file" ] && source "$file"
-done
-unset file
+# Completion caching for faster startup
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
 
+# Better completion formatting
+zstyle ':completion:*' menu select
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format '%F{yellow}-- %d --%f'
 
 # Zoxide (better cd)
 if command -v zoxide &> /dev/null; then
@@ -78,11 +112,23 @@ if command -v jenv &> /dev/null; then
   eval "$(jenv init -)"
 fi
 
+# Atuin (magical shell history)
+if command -v atuin &> /dev/null; then
+  eval "$(atuin init zsh)"
+fi
+
+# Direnv (auto-load environment variables)
+if command -v direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
 # Fzf specific config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Kepler SDK
-#source /Users/mhakanss/.kepler/kntools/sdk/0.16.4/environment-setup-sdk.sh
+# Starship prompt (alternative to p10k - set STARSHIP_ENABLED=1 to use)
+if [[ "$STARSHIP_ENABLED" == "1" ]] && command -v starship &> /dev/null; then
+  eval "$(starship init zsh)"
+else
+  # Default: Use Powerlevel10k
+  # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fi

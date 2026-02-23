@@ -29,8 +29,6 @@ cdf() {  # short for cdfinder
   cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
 }
 
-
-
 # git commit browser. needs fzf
 log() {
   git log --graph --color=always \
@@ -41,8 +39,6 @@ log() {
                 xargs -I % sh -c 'git show --color=always % | less -R'"
 }
 
-
-
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
   local port="${1:-9090}"
@@ -50,13 +46,10 @@ function server() {
   python3 -m http.server "$port"
 }
 
-
 # Copy w/ progress
 cp_p () {
   rsync -WavP --human-readable --progress $1 $2
 }
-
-
 
 # get gzipped size
 function gz() {
@@ -129,36 +122,80 @@ camerausedby() {
   echo -e "Recent camera uses:\n$usedby"
 }
 
-
-# animated gifs from any video
-# from alex sexton   gist.github.com/SlexAxton/4989674
-gifify() {
-  if [[ -n "$1" ]]; then
-  if [[ $2 == '--good' ]]; then
-    ffmpeg -i "$1" -r 10 -vcodec png out-static-%05d.png
-    time convert -verbose +dither -layers Optimize -resize 900x900\> out-static*.png  GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - > "$1.gif"
-    rm out-static*.png
-  else
-    ffmpeg -i "$1" -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > "$1.gif"
-  fi
-  else
-  echo "proper usage: gifify <input_movie.mov>. You DO need to include extension."
-  fi
-}
-
-# turn that video into webm.
-# brew reinstall ffmpeg --with-libvpx
-webmify(){
-  ffmpeg -i "$1" -vcodec libvpx -acodec libvorbis -isync -copyts -aq 80 -threads 3 -qmax 30 -y "$2" "$1.webm"
-}
-
 # direct it all to /dev/null
 function nullify() {
   "$@" >/dev/null 2>&1
 }
 
-# `shellswitch [bash |zsh]`
-#   Must be in /etc/shells
-shellswitch () {
-  chsh -s $(brew --prefix)/bin/$1
+
+# Update all the things - brew, npm, zinit, macOS
+function update_all() {
+  echo "🍺 Updating Homebrew..."
+  brew update && brew upgrade && brew cleanup
+
+  if command -v npm &> /dev/null; then
+    echo "📦 Updating npm global packages..."
+    npm update -g
+  fi
+
+  if command -v zinit &> /dev/null; then
+    echo "🔌 Updating zinit plugins..."
+    zinit self-update
+    zinit update --all
+  fi
+
+  echo "🍎 Checking for macOS updates..."
+  softwareupdate -l
+
+  echo "✅ Update check complete!"
+}
+
+# Fuzzy cd with fzf
+function fcd() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+
+# Search and edit file with fzf and bat preview
+function fe() {
+  local file
+  file=$(fzf --preview 'bat --color=always --style=numbers {}') && $EDITOR "$file"
+}
+
+# Git branch checkout with fzf
+function fco() {
+  local branches branch
+  branches=$(git --no-pager branch -a | grep -v HEAD) &&
+  branch=$(echo "$branches" | fzf --height=20% --reverse +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+# Git commit browser with fzf (enhanced version of existing log function)
+function flog() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr by %an" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index \
+      --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | head -1 | xargs git show --color=always' \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+
+# Create a directory and cd into it (alias for existing md function)
+function mkcd() {
+  mkdir -p "$@" && cd "$@"
+}
+
+# Quick git add, commit, push
+function gacp() {
+  git add .
+  git commit -m "$1"
+  git push
+}
+
+# Show disk usage sorted by size
+function ducks() {
+  du -sh * 2>/dev/null | sort -h
 }

@@ -17,8 +17,9 @@
 
 
 [core]
-	excludesfile = /Users/mhakanss/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
+	editor = nano
 
 [pager]
     # Use delta for beautiful diffs (brew install git-delta)
@@ -34,6 +35,8 @@
     light = false      # Set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
     side-by-side = false
     line-numbers = true
+    line-numbers-left-format = ""
+    line-numbers-right-format = "│ "
 
 # so much color
 [color]
@@ -59,11 +62,19 @@
     changed = green
     untracked = cyan
 
+[diff]
+    algorithm = histogram      # Better diff algorithm
+    colorMoved = default       # Highlight moved code
+    colorMovedWS = allow-indentation-change
+
+[rerere]
+    enabled = true            # Reuse recorded resolution of conflicts
+
 # git mergetool
 [merge]
     log = true
     tool = sublime-merge
-    conflictstyle = diff3
+    conflictstyle = zdiff3    # Even better than diff3
 [url "git@github.com:"]
     insteadOf = "gh:"
     insteadOf = "git://github.com"
@@ -78,7 +89,7 @@
 
 # correct typos
 [help]
-    autocorrect = 1
+    autocorrect = prompt      # Safer than auto-executing
 
 # push easily. http://stackoverflow.com/a/23918418/89484
 [push]
@@ -102,11 +113,17 @@
 
 [fetch]
     prune = true
+    pruneTags = true          # Also prune deleted tags
 
 #[commit]
 #    template = ~/.stCommitMsg
 [pull]
-	rebase = false
+	rebase = true             # Cleaner history with rebase
+
+[rebase]
+	autoStash = true          # Auto-stash uncommitted changes
+	updateRefs = true         # Update branch pointers
+
 [init]
 	defaultBranch = main
 [difftool "sourcetree"]
